@@ -26,6 +26,20 @@ If you want to test this, make sure your server is running under the [`newsign`]
 
 After that, copy `gui.py` and `mhf-iel.exe` (either from the releases page or by compiling it yourself) to the folder MHF is installed. Run `gui.py`, and be happy.
 
+### How to run no GUI on Erupe
+
+1. Download `mhf-iel.exe` from [releases](https://github.com/rockisch/mhf-iel/releases) and move to MHFrontier folder.
+2. Create an sign_session on your PosgreSQL `INSERT INTO sign_sessions ("user_id", "token") VALUES (<user_id>, <token>)`
+
+Example: `INSERT INTO sign_sessions ("user_id", "token") VALUES (1, "tqVPK2TASRVTjEDQ")`
+
+3. Run .exe on MHFrontier folder. `./mhf-iel.exe <char_id> <is_new> <token>`
+
+Example: `./mhf-iel.exe 1 1 tqVPK2TASRVTjEDQ`
+
+
+
+
 ## Compile
 
 In order to compile the project, a x86/32bit version of `cl` should be used, since we need to interface with `mhfo-hd.dll`, which was built for x86.
